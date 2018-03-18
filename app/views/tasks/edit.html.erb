@@ -1,3 +1,4 @@
+<!--
 <h1>id:
 <%= @task.id %>
 のタスク編集ページ</h1>
@@ -5,3 +6,15 @@
 <%= render 'form', task: @task %>
 
 <%= link_to '一覧に戻る',tasks_path %>
+-->
+
+<h1>id: <%= @task.id %> のメッセージ編集ページ</h1>
+
+<%= form_for(@task) do |f| %>
+  <%= f.label :content, 'タスク' %>
+  <%= f.text_field :content %>
+
+  <%= f.submit '作成' %>
+<% end %>
+
+<%= link_to '一覧に戻る', tasks_path %>
